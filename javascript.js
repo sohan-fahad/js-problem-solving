@@ -6,9 +6,9 @@ function cardDistribution(arr) {
         let postalCode = arr[i].postNo.toString().slice(0, 2)
         let birthYear = arr[i].birthYear
         let concatNumber = districtName + currentYear + postalCode + birthYear
-        let padNumber = concatNumber.padEnd(15, 0)
         let lastDigit = i + 1
-        let cardNumber = padNumber + lastDigit
+        let padNumber = lastDigit.toString().padStart(6, 0)
+        let cardNumber = concatNumber + padNumber
 
         let obj = { cardNumber }
 
